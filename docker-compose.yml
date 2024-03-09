@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db-postgresql:
+    image: postgres:15
+    container_name: "hahaton-db-postgresql"
+    # раскоменитить для сохранения БД
+    #    volumes:
+    #      - ./docker/postgresql/data/:/var/lib/postgresql/data/
+    environment:
+        - POSTGRES_DB=hahaton_db
+        - POSTGRES_USER=hahaton_user
+        - POSTGRES_PASSWORD=hahaton_password
+    ports:
+        - "5432:5432"
